@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='otp.css')}}">
+
+    <title>OTP PAGE</title>
+</head>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <b><center>{{ message }}</center></b>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <p>OTP sent on ....12@gmail.com</p>
+    <h1>Enter OTP</h1>
+    <div class="otp-field">
+        <form method="POST" action="{{url_for('otp',otp=otp,email=email,password=password,cpassword=cpassword)}}">
+            <input type="text" maxlength="6" name="otp"><br>
+            <button><center><b>SUBMIT</b></center></button>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='weather.css')}}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <video autoplay muted loop id="myVideo">
+        <source src="{{url_for('static',filename='weather 2.mp4')}}" type="video/mp4">
+    </video>
+    <header class="menu">
+        <input class="menu2" type="checkbox" name="" id="">
+        <nav>
+            <a href="{{url_for('forecast')}}" style="--i:2">FORECAST</a><br><br>
+            <a href="{{url_for('previous1')}}" style="--i:3">PREVIOUS</a><br><br>
+            <a href="{{url_for('logout')}}">LOGOUT</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="search-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" placeholder="Enter your location">
+            <button class="fa-solid fa-magnifying-glass"></button>
+        </div>
+        
+        
+            
+        <div class="not-found">
+            <img src="images/location_not_found.png">
+            <p>Oops..! Location not found😐</p>
+        </div>
+        <div class="weather-box">
+            <img src="">
+            <p class="temperature"></p>
+            <p class="description"></p>
+        </div>
+        
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+        
+    <script src="{{url_for('static',filename='index.js')}}"></script>
+</body>
+
+</html>

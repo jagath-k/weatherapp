@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="first">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER APPLICATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{url_for('static',filename='style1.css')}}">
+
+</head>
+<body>
+<video autoplay muted loop id="myVideo">
+    <source src="{{url_for('static',filename='forcast1.mp4')}}" type="video/mp4">
+ </video>  
+ 
+ <div class="content">
+    
+    <header>
+        <div><marquee>LIVE WEATHER FORECAST</marquee>
+        </div>
+    
+    </header>
+    <div class="student">
+        
+        <h2>GET STARTED</h2>
+        <div style="text-align:center;">
+            <a href="{{url_for('register')}}"><button class="btnstyle">SIGN UP</button></a>
+            <a href="{{url_for('login')}}"><button class="btnstyle">LOGIN</button></a>
+        </div>
+    </div> 
+  </div>
+    
+</body>
+</html>

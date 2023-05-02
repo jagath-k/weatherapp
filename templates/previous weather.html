@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+  
+  
+      <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+  
+</head>
+<style>
+	
+.login{
+    margin-bottom:50%;
+    width: 80px;
+    height: 40px;
+    background-color: rgb(233, 10, 10);
+    color: #080710;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+}
+.login:hover{
+  background-color: #0df109;
+}
+</style>
+<body>
+	<div>
+        <a href="{{url_for('previous1')}}"><button class="login">BACK</button></a>
+    </div>
+    
+  <div class="container">
+	<table border="1px" cellpadding="20px" cellspacing="0px">
+        <tr>
+                 <th>Date</th>
+                 <th>Sunrise</th>
+                 <th>Sunset</th>
+                 <th>temperature</th>
+                 <th>Humidity</th>
+                 <th>Pressure</th>
+            
+        </tr>
+        {% for i in data %}
+        <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[5]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+  
+  
+</body>
+</html>
